@@ -228,7 +228,7 @@ You are free to use, modify, and distribute it for academic and personal use.
 
 ## 👨‍💻 Author
 
-Mrityunjay Sharma
+**Mrityunjay Sharma**
 AI & Software Engineering Enthusiast
 *📧 Feel free to connect for collaboration or research projects*
 
