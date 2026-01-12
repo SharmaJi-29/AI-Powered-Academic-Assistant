@@ -2,15 +2,20 @@
 AI-Powered Academic Assistant is an intelligent desktop application that helps students study smarter, not harder. 
 It integrates AI-based summarization, visual question solving, personalized study planning, and interactive academic assistance in a single unified platform.
 
-![Build](https://github.com/mrityunjay-sharma/AI-Powered-Academic-Assistant/actions/workflows/build.yml/badge.svg)
-![Python CI](https://github.com/mrityunjay-sharma/AI-Powered-Academic-Assistant/actions/workflows/python-ci.yml/badge.svg)
-![Lint](https://github.com/mrityunjay-sharma/AI-Powered-Academic-Assistant/actions/workflows/lint.yml/badge.svg)
-![Tests](https://github.com/mrityunjay-sharma/AI-Powered-Academic-Assistant/actions/workflows/tests.yml/badge.svg)
-![Code Quality](https://github.com/mrityunjay-sharma/AI-Powered-Academic-Assistant/actions/workflows/code-quality.yml/badge.svg)
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
+![KivyMD](https://img.shields.io/badge/UI-KivyMD-green)
+![NLP](https://img.shields.io/badge/NLP-Text%20Processing-orange)
+![LLM](https://img.shields.io/badge/LLM-Ollama%20%7C%20Transformers-purple)
+![OCR](https://img.shields.io/badge/OCR-Image%20%7C%20PDF-yellow)
+![StudyPlanner](https://img.shields.io/badge/Feature-AI%20Study%20Planner-cyan)
+![Domain](https://img.shields.io/badge/Domain-Education%20AI-red)
+![Status](https://img.shields.io/badge/Status-Active-success)
+![License](https://img.shields.io/badge/License-Academic%20Use-lightgrey)
 
+---
 ## 📌 Table of Contents
 - [Overview](#📖-Overview)
-- [Key Features](#✨-Key Features)￼
+- [Key Features](#✨-Key-Features)￼
 - [System Architecture](#🧠-System-Architecture)￼
 - [Tech Stack](#🛠-Tech-Stack)
 - [Project Structure](#📂-Project-Structure)￼
@@ -23,7 +28,7 @@ It integrates AI-based summarization, visual question solving, personalized stud
 - [Contribution Guidelines](#🤝-Contribution-Guidelines)￼
 - [License](#📜-License)￼
 
-⸻
+---
 
 ## 📖 Overview
 The AI-Powered Academic Assistant is designed to support students in their daily academic activities by leveraging Artificial Intelligence and NLP.
@@ -41,7 +46,7 @@ This project is ideal for:
 - Research-oriented learners
 - AI-based academic projects
 
-⸻
+---
 
 ## ✨ Key Features
 1. AI Document Summarizer
@@ -53,7 +58,7 @@ This project is ideal for:
 7. Modern UI with KivyMD
 8. Offline-friendly Architecture
 
-⸻
+---
 
 ## 🧠 System Architecture
 ```bash
@@ -69,6 +74,7 @@ Local Database (SQLite)
         v
 User Data | Study Plans | History
 ```
+---
 
 ## 🛠 Tech Stack
 | Category | Technology |
@@ -81,7 +87,7 @@ User Data | Study Plans | History
 | File Handling | PDF, Image, Text |
 | OS Support | Windows / macOS / Linux |
 
-⸻
+---
 
 ## 📂 Project Structure
 ```bash
@@ -109,38 +115,36 @@ AI-Powered-Academic-Assistant/
 │
 └── README.md                  # Project documentation
 ```
-⸻
+---
 
 ## ⚙️ Installation & Setup
 
-### 1️⃣ Clone the Repository
+**1️⃣ Clone the Repository**
 ```bash
 git clone https://github.com/your-username/AI-Powered-Academic-Assistant.git
 cd AI-Powered-Academic-Assistant
 ```
-
-### 2️⃣ Create Virtual Environment (Recommended)
+**2️⃣ Create Virtual Environment (Recommended)**
 ```bash
 python -m venv venv
 source venv/bin/activate      # macOS/Linux
 venv\Scripts\activate         # Windows
 ```
-
-### 3️⃣ Install Dependencies
+**3️⃣ Install Dependencies**
 ```bash
 pip install -r requirements.txt
 ```
-| Make sure Kivy, KivyMD, OpenCV, and NLP libraries are installed properly.
+**Make sure Kivy, KivyMD, OpenCV, and NLP libraries are installed properly.*
 
-⸻
+---
 
 ## ▶️ How to Run
 ```bash
 python main.py
 ```
-| The application will launch with the Splash Screen → Login → Home Dashboard flow.
+**The application will launch with the Splash Screen → Login → Home Dashboard flow.*
 
-⸻
+---
 
 ## 🔄 Application Workflow
 1. Splash Screen
@@ -155,31 +159,31 @@ python main.py
 6. Results stored locally
 7. User receives structured output
 
-⸻
+---
 
 ## 🧩 Modules Explanation
 
-### 📘 AI Summarizer
+**📘 AI Summarizer**
 - Upload PDF / Text
 - Generates concise academic summaries
 - Useful for revision & notes
 
-### 🖼 Visual Question Solver
+***🖼 Visual Question Solver**
 - Upload image or scanned question
 - OCR + AI reasoning
 - Step-by-step explanation
-
-### 🗓 Study Planner
+  
+**🗓 Study Planner**
 - Personalized AI-generated study plans
 - Daily & scheduled planning
 - Stored in JSON format
 
-💬 Ask-AI Assistant
+**💬 Ask-AI Assistant**
 - Academic Q&A chatbot
 - Concept explanations
 - Exam preparation support
 
-⸻
+---
 
 ## 🖼 Screenshots
 ```bash
@@ -190,7 +194,7 @@ screenshots/
 ├── summarizer.png
 ├── study_planner.png
 ```
-⸻
+---
 
 ## 🚀 Future Enhancements
 - 🔔 Smart reminders & notifications
@@ -200,7 +204,7 @@ screenshots/
 - 🔐 Blockchain-based data security
 - 🎯 Adaptive learning recommendations
 
-⸻
+---
 
 ## 🤝 Contribution Guidelines
 
@@ -210,16 +214,16 @@ Contributions are welcome!
 3. Commit your changes
 4. Open a Pull Request
 
-Please follow clean code practices and add proper documentation.
+**Please follow clean code practices and add proper documentation.*
 
-⸻
+---
 
 ## 📜 License
 
 This project is licensed under the MIT License.
 You are free to use, modify, and distribute it for academic and personal use.
 
-⸻
+---
 
 ## 👨‍💻 Author
 
@@ -227,6 +231,6 @@ Mrityunjay Sharma
 AI & Software Engineering Enthusiast
 📧 Feel free to connect for collaboration or research projects
 
-⸻
+---
 
-### ⭐ If you like this project, don’t forget to star the repository!
+**⭐ If you like this project, don’t forget to star the repository!**
