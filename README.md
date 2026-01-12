@@ -22,8 +22,7 @@ It integrates AI-based summarization, visual question solving, personalized stud
 - [Installation & Setup](#⚙️-Installation-&-Setup)￼
 - [How to Run](#▶️-How-to-Run)￼
 - [Application Workflow](#🔄-Application-Workflow)￼
-- [Modules Explanation](#🧩-Modules-Explanation)￼
-- [Screenshots](#🖼-Screenshots)￼
+- [Modules Explanation](#🧩-Modules-Explanation)￼￼
 - [Future Enhancements](#🚀-Future-Enhancements)￼
 - [Contribution Guidelines](#🤝-Contribution-Guidelines)￼
 - [License](#📜-License)￼
@@ -183,18 +182,6 @@ python main.py
 - Concept explanations
 - Exam preparation support
 
----
-
-## 🖼 Screenshots
-![Splash Screen](screenshots/splash.png)
-```bash
-screenshots/
-├── splash.png
-├── login.png
-├── dashboard.png
-├── summarizer.png
-├── study_planner.png
-```
 ---
 
 ## 🚀 Future Enhancements
