@@ -1,0 +1,132 @@
+#:kivy 2.2.1
+#:import MDDatePicker kivymd.uix.pickers.MDDatePicker
+#:import MDTimePicker kivymd.uix.pickers.MDTimePicker
+
+<StudyPlannerScreen>:
+
+    MDBoxLayout:
+        orientation: "vertical"
+
+        MDTopAppBar:
+            title: "Personalized Study Planner"
+            elevation: 6
+            left_action_items: [["arrow-left", lambda x: app.go_home()]]
+
+        MDBottomNavigation:
+
+            MDBottomNavigationItem:
+                name: "scheduled"
+                text: "Scheduled"
+                icon: "calendar-clock"
+
+                MDBoxLayout:
+                    orientation: "vertical"
+
+                    MDCard:
+                        radius: [24]
+                        elevation: 8
+                        padding: dp(16)
+                        size_hint_y: None
+                        height: dp(120)
+                        md_bg_color: app.theme_cls.primary_light
+
+                        MDBoxLayout:
+                            orientation: "vertical"
+                            spacing: dp(6)
+
+                            MDLabel:
+                                text: "⏰ Scheduled Tasks"
+                                font_style: "H6"
+                                bold: True
+
+                            MDLabel:
+                                text: "Plan future study sessions with reminders"
+                                theme_text_color: "Hint"
+
+                    MDScrollView:
+                        MDList:
+                            id: scheduled_task_list
+
+                    MDFloatingActionButton:
+                        icon: "plus"
+                        elevation: 8
+                        pos_hint: {"center_x": 0.9, "center_y": 0.12}
+                        on_release: root.show_add_scheduled_dialog()
+
+            MDBottomNavigationItem:
+                name: "daily"
+                text: "Daily Plan"
+                icon: "calendar-today"
+
+                MDBoxLayout:
+                    orientation: "vertical"
+
+                    MDCard:
+                        radius: [24]
+                        elevation: 8
+                        padding: dp(16)
+                        size_hint_y: None
+                        height: dp(120)
+                        md_bg_color: app.theme_cls.primary_light
+
+                        MDBoxLayout:
+                            orientation: "vertical"
+                            spacing: dp(6)
+
+                            MDLabel:
+                                text: "🎯 Today's Focus"
+                                font_style: "H6"
+                                bold: True
+
+                            MDLabel:
+                                text: "Break your day into achievable goals"
+                                theme_text_color: "Hint"
+
+                    MDScrollView:
+                        MDList:
+                            id: daily_plan_list
+
+                    MDFloatingActionButton:
+                        icon: "plus"
+                        elevation: 8
+                        pos_hint: {"center_x": 0.9, "center_y": 0.12}
+                        on_release: root.show_add_daily_plan_dialog()
+
+
+<ScheduledDialogContent>:
+    orientation: "vertical"
+    spacing: dp(12)
+    padding: dp(12)
+    size_hint_y: None
+    height: self.minimum_height
+
+    MDTextField:
+        id: subject_field
+        hint_text: "Subject"
+        mode: "rectangle"
+        icon_right: "book-outline"
+
+    MDTextField:
+        id: topic_field
+        hint_text: "Topic to Study"
+        mode: "rectangle"
+        icon_right: "text-box-outline"
+    
+
+
+<DailyPlanDialogContent>:
+    orientation: "vertical"
+    spacing: dp(12)
+    padding: dp(12)
+    size_hint_y: None
+    height: self.minimum_height
+
+    MDTextField:
+        id: subject_field
+        hint_text: "Subject"
+        icon_right: "book"
+
+    MDTextField:
+        id: topic_field
+        hint_text: "Topic (Optional)"
+        icon_right: "lightbulb-outline"

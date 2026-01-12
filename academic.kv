@@ -1,0 +1,325 @@
+#:kivy 2.3.0
+#: import dp kivy.metrics.dp
+#:import MDFillRoundFlatButton kivymd.uix.button.MDFillRoundFlatButton
+#:import MDTextField kivymd.uix.textfield.MDTextField
+#:import MDDatePicker kivymd.uix.pickers.MDDatePicker
+#:import MDTimePicker kivymd.uix.pickers.MDTimePicker
+
+<SplashScreen>:
+    MDFloatLayout:
+        MDIcon:
+            icon: "book-open-variant"
+            halign: "center"
+            font_size: "150sp"
+            pos_hint: {"center_x": .5, "center_y": .6}
+        MDLabel:
+            text: "Academic Assistant"
+            halign: "center"
+            font_style: "H5"
+            pos_hint: {"center_y": .4}
+
+<LoginScreen>:
+    MDFloatLayout:
+        MDLabel:
+            text: "Login"
+            halign: "center"
+            font_style: "H4"
+            pos_hint: {"center_y": .9}
+        MDTextField:
+            id: email
+            hint_text: "Email"
+            icon_left: "email"
+            pos_hint: {"center_x": .5, "center_y": .65}
+            size_hint_x: .8
+            mode: "rectangle"
+        MDTextField:
+            id: password
+            hint_text: "Password"
+            password: True
+            icon_left: "lock"
+            pos_hint: {"center_x": .5, "center_y": .55}
+            size_hint_x: .8
+            mode: "rectangle"
+        MDFillRoundFlatButton:
+            text: "Login"
+            pos_hint: {"center_x": .5, "center_y": .45}
+            md_bg_color: app.theme_cls.primary_color
+            on_release: root.do_login()
+        MDLabel:
+            text: "Don't have an account?"
+            halign: "center"
+            pos_hint: {"center_y": .35}
+            theme_text_color: "Secondary"
+        MDFlatButton:
+            text: "Register"
+            theme_text_color: "Custom"
+            text_color: app.theme_cls.primary_color
+            pos_hint: {"center_x": .5, "center_y": .30}
+            on_release: app.root.current = "register"
+
+<RegisterScreen>:
+    MDFloatLayout:
+        MDLabel:
+            text: "Register"
+            halign: "center"
+            font_style: "H4"
+            pos_hint: {"center_y": .9}
+        MDTextField:
+            id: Name
+            hint_text: "Full Name"
+            icon_left: "account"
+            pos_hint: {"center_x": .5, "center_y": .7}
+            size_hint_x: .8
+            mode: "rectangle"
+        MDTextField:
+            id: email
+            hint_text: "Email"
+            icon_left: "email"
+            pos_hint: {"center_x": .5, "center_y": .6}
+            size_hint_x: .8
+            mode: "rectangle"
+        MDTextField:
+            id: password
+            hint_text: "Password"
+            icon_left: "lock"
+            password: True
+            pos_hint: {"center_x": .5, "center_y": .5}
+            size_hint_x: .8
+            mode: "rectangle"
+        MDFillRoundFlatButton:
+            text: "Register"
+            pos_hint: {"center_x": .5, "center_y": .4}
+            md_bg_color: app.theme_cls.primary_color
+            on_release: root.do_register()
+        MDLabel:
+            text: "Already have an account?"
+            halign: "center"
+            pos_hint: {"center_y": .30}
+            theme_text_color: "Secondary"
+        MDFlatButton:
+            text: "Login"
+            theme_text_color: "Custom"
+            text_color: app.theme_cls.primary_color
+            pos_hint: {"center_x": .5, "center_y": .25}
+            on_release: app.root.current = "login"
+
+<HomeScreen>:
+    name: "home"
+
+    BoxLayout:
+        orientation: "vertical"
+        padding: dp(20)
+        spacing: dp(20)
+
+        # ===== Top Title Card =====
+        MDTopAppBar:
+            title: "AI Academic Assistant"
+            elevation: 4
+            height: dp(56)
+            font_style: "H5"
+
+        MDLabel:
+            text: "Welcome to AI Academic Assistant"
+            halign: "center"
+            theme_text_color: "Hint"
+            size_hint_y: None
+            height: "30dp"
+
+        # ===== Center Button Card =====
+        AnchorLayout:
+            anchor_x: "center"
+            anchor_y: "center"
+
+            MDCard:
+                orientation: "vertical"
+                padding: dp(25)
+                spacing: dp(18)
+                radius: [25]
+                elevation: 12
+                size_hint: None, None
+                size: dp(320), dp(260)
+                md_bg_color: 0.97, 0.97, 0.97, 1
+
+                MDRaisedButton:
+                    text: "Question Solving"
+                    size_hint_x: 1
+                    on_release: app.open_QnA()
+
+                MDRaisedButton:
+                    text: "Summarizer"
+                    size_hint_x: 1
+                    on_release: app.open_summarizer()
+
+                MDRaisedButton:
+                    text: "Personalized study plan"
+                    icon: "calendar-check"
+                    size_hint_x: 1
+                    on_release: app.open_study_planner()
+
+<VisualQnAScreen>:
+    MDBoxLayout:
+        orientation: "vertical"
+        padding: "12dp"
+        spacing: "10dp"
+
+        MDTopAppBar:
+            title: "Visual Q&A Assistant"
+            left_action_items: [["arrow-left", lambda x: app.go_home()]]
+
+        MDCard:
+            radius: [18]
+            elevation: 6
+            padding: "10dp"
+            size_hint_y: None
+            height: "64dp"
+
+            MDBoxLayout:
+                spacing: "8dp"
+
+                MDTextField:
+                    id: question
+                    hint_text: "Type your question here"
+                    mode: "round"
+                    multiline: False
+                    on_text_validate: root.search_query()
+
+                MDIconButton:
+                    icon: "magnify"
+                    on_release: root.search_query()
+
+        MDBoxLayout:
+            spacing: "12dp"
+            size_hint_y: None
+            height: "48dp"
+
+            MDRaisedButton:
+                text: "Image"
+                on_release: root.open_image()
+
+            MDRaisedButton:
+                text: "Document"
+                on_release: root.open_document()
+
+        MDCard:
+            radius: [20]
+            elevation: 4
+            padding: "12dp"
+
+            ScrollView:
+                MDLabel:
+                    id: answer
+                    text: "Answers will appear here"
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                    text_size: self.width, None
+
+<SummarizerScreen>:
+    MDBoxLayout:
+        orientation: "vertical"
+        padding: "12dp"
+        spacing: "10dp"
+
+        MDTopAppBar:
+            title: "AI Summarizer"
+            left_action_items: [["arrow-left", lambda x: app.go_home()]]
+
+        MDLabel:
+            text: "Upload → Summarize → Ask Questions"
+            halign: "center"
+            theme_text_color: "Hint"
+            size_hint_y: None
+            height: "24dp"
+
+        MDCard:
+            radius: [18, 18, 18, 18]
+            elevation: 6
+            padding: "10dp"
+            size_hint_y: None
+            height: dp(72)
+
+            MDBoxLayout:
+                spacing: "10dp"
+
+                MDLabel:
+                    id: file_name_label
+                    text: "No document selected"
+                    theme_text_color: "Secondary"
+                    halign: "left"
+
+                MDIconButton:
+                    icon: "folder-outline"
+                    on_release: root.open_document()
+        MDBoxLayout:
+            orientation: "vertical"
+            spacing: dp(10)
+            size_hint_y: None
+            height: self.minimum_height
+
+            MDRaisedButton:
+                id: summarize_btn
+                text: "Summarize Document"
+                icon: "text-box-outline"
+                size_hint_x: 1
+                height: dp(48)
+                disabled: True
+                on_release: root.summarize_text()
+
+            MDRaisedButton:
+                id: ask_btn
+                text: "Ask AI"
+                icon: "chat-question-outline"
+                size_hint_x: 1
+                height: dp(48)
+                disabled: True
+                on_release: app.open_ask_ai()
+
+
+        MDCard:
+            radius: [20]
+            elevation: 4
+            padding: "12dp"
+
+            ScrollView:
+                MDLabel:
+                    id: summary
+                    text: "Summary will appear here..."
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                    text_size: self.width, None
+
+<AskAIScreen>:
+    MDBoxLayout:
+        orientation: "vertical"
+        padding: "12dp"
+        spacing: "10dp"
+
+        MDTopAppBar:
+            title: "Ask AI"
+            left_action_items: [["arrow-left", lambda x: app.go_back_to_summarizer()]]
+
+        MDTextField:
+            id: question
+            hint_text: "Ask your academic question..."
+            multiline: True
+            mode: "rectangle"
+            size_hint_y: None
+            height: "120dp"
+
+        MDRaisedButton:
+            text: "Search"
+            pos_hint: {"center_x": 0.5}
+            on_release: root.ask_ai()
+
+        MDCard:
+            radius: [20]
+            elevation: 4
+            padding: "12dp"
+
+            ScrollView:
+                MDLabel:
+                    id: answer
+                    text: "AI answer will appear here..."
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                    text_size: self.width, None
+
