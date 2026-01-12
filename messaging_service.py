@@ -5,13 +5,13 @@ from twilio.rest import Client
 # ----------------------------
 # Twilio credentials here
 # ----------------------------
-ACCOUNT_SID = "AC6e1da314c8eb8e25e3a5dd1eb26b48a9"
-AUTH_TOKEN = "d01185bf772bc567823b0d61233e0e1d"
+ACCOUNT_SID = 'Your Account SID'
+AUTH_TOKEN = 'Your Account Authentication Token'
 
-FROM_NUMBER = "+19529528546"   
+FROM_NUMBER = 'Your Twillo Number'  
 
 
-TO_NUMBER = "+919098218859"    
+TO_NUMBER = 'Personal Mobile Number'    
 
 client = Client(ACCOUNT_SID, AUTH_TOKEN)
 
