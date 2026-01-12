@@ -134,7 +134,7 @@ venv\Scripts\activate         # Windows
 ```bash
 pip install -r requirements.txt
 ```
-**Make sure Kivy, KivyMD, OpenCV, and NLP libraries are installed properly.*
+*Make sure Kivy, KivyMD, OpenCV, and NLP libraries are installed properly.*
 
 ---
 
@@ -142,7 +142,7 @@ pip install -r requirements.txt
 ```bash
 python main.py
 ```
-**The application will launch with the Splash Screen → Login → Home Dashboard flow.*
+*The application will launch with the Splash Screen → Login → Home Dashboard flow.*
 
 ---
 
@@ -168,7 +168,7 @@ python main.py
 - Generates concise academic summaries
 - Useful for revision & notes
 
-***🖼 Visual Question Solver**
+**🖼 Visual Question Solver**
 - Upload image or scanned question
 - OCR + AI reasoning
 - Step-by-step explanation
@@ -186,6 +186,7 @@ python main.py
 ---
 
 ## 🖼 Screenshots
+![Splash Screen](screenshots/splash.png)
 ```bash
 screenshots/
 ├── splash.png
@@ -214,7 +215,7 @@ Contributions are welcome!
 3. Commit your changes
 4. Open a Pull Request
 
-**Please follow clean code practices and add proper documentation.*
+*Please follow clean code practices and add proper documentation.*
 
 ---
 
@@ -229,8 +230,8 @@ You are free to use, modify, and distribute it for academic and personal use.
 
 Mrityunjay Sharma
 AI & Software Engineering Enthusiast
-📧 Feel free to connect for collaboration or research projects
+*📧 Feel free to connect for collaboration or research projects*
 
 ---
 
-**⭐ If you like this project, don’t forget to star the repository!**
+*⭐ If you like this project, don’t forget to star the repository!**
